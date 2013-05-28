@@ -1,0 +1,81 @@
+.contact {
+  position: fixed;
+  padding-top: 110px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #999;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+.contact a:hover {
+  color: #2D9C68;
+}
+
+.content {
+  border-left: 1px solid #DDD;
+  padding-left: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  float: right;
+}
+
+.content h2 {
+  /* border-bottom: 1px solid #DDD; */
+}
+
+.content p.timeframe {
+  font-size: 15px;
+  font-weight: bold;
+  color: #999;
+}
+
+.content a {
+  color: #999;
+}
+
+.content a:hover {
+  color: #2D9C68;
+}
+
+.content p.description {
+  font-size: 17px;
+}
+
+.photo {
+  background-color: #e3e3e3;
+  background-image: url('../images/jeff.jpg');
+  background-size: contain;
+  border: 3px solid #000;
+  border-radius: 2px;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 650px) {
+  .contact {
+    height: auto;
+    position: relative;
+    text-align: center;
+    padding-top: 30px;
+  }
+  
+  .content {
+    float: none;
+    padding: 0;
+    border: none;
+  }
+
+  .photo {
+    display: none;
+  }
+}
