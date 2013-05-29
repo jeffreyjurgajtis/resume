@@ -1,10 +1,14 @@
 module Helpers
+  def self.project_root
+    Pathname(__dir__).parent
+  end
+
   def self.destination_directory
-    Pathname(__dir__) + 'public'
+    project_root + 'public'
   end
 
   def self.source_directory
-    Pathname(__dir__) + 'content'
+    project_root + 'content'
   end
 
   def self.compiled_files
