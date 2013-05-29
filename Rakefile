@@ -5,29 +5,10 @@ require 'foreman'
 require 'haml'
 require 'pathname'
 require 'pry'
-require 'rack'
+require 'rack/mime'
 require 'sass'
-
-SOURCE_DIRECTORY = Pathname(__dir__) + 'content'
-DESTINATION_DIRECTORY = Pathname(__dir__) + 'public'
-
-module Helpers
-  def self.markup_files
-    Pathname.glob(SOURCE_DIRECTORY + '**' + '*.haml')
-  end
-
-  def self.script_files
-    Pathname.glob(SOURCE_DIRECTORY + 'scripts' + '**' + '*.coffee')
-  end
-
-  def self.style_files
-    Pathname.glob(SOURCE_DIRECTORY + 'styles' + '**' + '*.scss')
-  end
-
-  def self.static_files
-    (Pathname.glob(SOURCE_DIRECTORY + '**' + '*') - markup_files - script_files - style_files).select(&:file?)
-  end
-end
+require_relative 'lib/helpers'
+require_relative 'lib/pusher'
 
 desc 'Monitor site for changes and rebuild as neccessary'
 task :watch do
@@ -38,12 +19,12 @@ task build: %w[build:prepare build:markup build:scripts build:styles build:stati
 
 namespace :build do
   task :prepare do
-    FileUtils.rm_r DESTINATION_DIRECTORY if DESTINATION_DIRECTORY.directory?
+    FileUtils.rm_r Helpers.destination_directory if Helpers.destination_directory.directory?
   end
 
   task :markup do
     Helpers.markup_files.each do |source|
-      destination_tmp = DESTINATION_DIRECTORY + source.relative_path_from(SOURCE_DIRECTORY)
+      destination_tmp = Helpers.destination_directory + source.relative_path_from(Helpers.source_directory)
       destination = Pathname(destination_tmp.to_path.sub(/#{destination_tmp.extname}\z/, '.html'))
       destination.dirname.mkpath
       destination.open('w:UTF-8') do |f|
@@ -58,7 +39,7 @@ namespace :build do
 
   task :styles do
     Helpers.style_files.each do |source|
-      destination_tmp = DESTINATION_DIRECTORY + source.relative_path_from(SOURCE_DIRECTORY)
+      destination_tmp = Helpers.destination_directory + source.relative_path_from(Helpers.source_directory)
       destination = Pathname(destination_tmp.to_path.sub(/#{destination_tmp.extname}\z/, '.css'))
       destination.dirname.mkpath
       destination.open('w:UTF-8') do |f|
@@ -70,7 +51,7 @@ namespace :build do
 
   task :static do
     Helpers.static_files.each do |source|
-      destination = DESTINATION_DIRECTORY + source.relative_path_from(SOURCE_DIRECTORY)
+      destination = Helpers.destination_directory + source.relative_path_from(Helpers.source_directory)
       destination.dirname.mkpath
       destination.open('w:UTF-8') do |f|
         f.binmode
@@ -82,6 +63,7 @@ end
 
 desc 'Push compiled site to Amazon S3'
 task :push do
+  Pusher.push!
 end
 
 desc 'Build and push'
