@@ -16,6 +16,8 @@ class Pusher
     Helpers.compiled_files.each do |file|
       object_key = file.relative_path_from(Helpers.destination_directory).to_path
 
+      puts "  #{object_key}"
+
       options = {
         acl: :public_read,
         content_encoding: 'utf-8',
