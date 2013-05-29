@@ -11,6 +11,24 @@ require 'sass'
 SOURCE_DIRECTORY = Pathname(__dir__) + 'content'
 DESTINATION_DIRECTORY = Pathname(__dir__) + 'public'
 
+module Helpers
+  def self.markup_files
+    Pathname.glob(SOURCE_DIRECTORY + '**' + '*.haml')
+  end
+
+  def self.script_files
+    Pathname.glob(SOURCE_DIRECTORY + 'scripts' + '**' + '*.coffee')
+  end
+
+  def self.style_files
+    Pathname.glob(SOURCE_DIRECTORY + 'styles' + '**' + '*.scss')
+  end
+
+  def self.static_files
+    (Pathname.glob(SOURCE_DIRECTORY + '**' + '*') - markup_files - script_files - style_files).select(&:file?)
+  end
+end
+
 desc 'Monitor site for changes and rebuild as neccessary'
 task :watch do
 end
@@ -24,7 +42,7 @@ namespace :build do
   end
 
   task :markup do
-    Pathname.glob(SOURCE_DIRECTORY + '**' + '*.haml').each do |source|
+    Helpers.markup_files.each do |source|
       destination_tmp = DESTINATION_DIRECTORY + source.relative_path_from(SOURCE_DIRECTORY)
       destination = Pathname(destination_tmp.to_path.sub(/#{destination_tmp.extname}\z/, '.html'))
       destination.dirname.mkpath
@@ -39,7 +57,7 @@ namespace :build do
   end
 
   task :styles do
-    Pathname.glob(SOURCE_DIRECTORY + 'styles' + '**' + '*.scss').each do |source|
+    Helpers.style_files.each do |source|
       destination_tmp = DESTINATION_DIRECTORY + source.relative_path_from(SOURCE_DIRECTORY)
       destination = Pathname(destination_tmp.to_path.sub(/#{destination_tmp.extname}\z/, '.css'))
       destination.dirname.mkpath
@@ -51,6 +69,14 @@ namespace :build do
   end
 
   task :static do
+    Helpers.static_files.each do |source|
+      destination = DESTINATION_DIRECTORY + source.relative_path_from(SOURCE_DIRECTORY)
+      destination.dirname.mkpath
+      destination.open('w:UTF-8') do |f|
+        f.binmode
+        f.write source.read
+      end
+    end
   end
 end
 
