@@ -1,0 +1,56 @@
+!!!
+%html{lang: 'en'}
+  %head
+    %meta{charset: 'utf-8'}/
+    %title Jeffrey Jurgajtis
+    %link{href: 'styles/toast.css', rel: 'stylesheet', type: 'text/css'}/
+    %link{href: 'styles/base.css', rel: 'stylesheet', type: 'text/css'}/
+  %body
+    .container
+      .grid
+        .unit.one-of-four.contact
+          .photo
+          %h2{style: 'color: black'} Jeffrey Jurgajtis
+          %a{href: 'mailto:jeffreyjurgajtis@gmail.com'} jeffreyjurgajtis@gmail.com
+          %br/
+          %a{href: 'https://github.com/jeffreyjurgajtis'} github.com/jeffreyjurgajtis
+          %br/
+          %a{href: 'https://twitter.com/jeffjurgajtis'} @jeffjurgajtis
+
+        .unit.three-of-four.content
+          %h1 Ruby on Rails Software Developer
+          %p Hi, I&apos;m a software developer. I enjoy solving business problems with software and learning about new web technologies. When I'm not developing, I&apos;m working on a degree in Computer Information Systems, wakeboarding, or reading.
+
+          %h2 Employment
+          .unit.one-of-two{style: 'margin-left: 0;'}
+            %h3 Mckesson
+            %p.timeframe November 2012 - Present
+            %p.description Software developer on a cancer decision support software system for Proventys, a health-IT startup recently acquired by McKesson.
+
+          .unit.one-of-two
+            %h3 CollegePlus
+            %p.timeframe July 2011 - November 2012
+            %p.description
+              Software developer on Rails/Backbone.js applications to manage student and employee records for
+              = succeed ',' do
+                %a{href: 'http://collegeplus.org'} CollegePlus
+              an education consultancy.
+
+          %h2 Other Projects
+          .unit.one-of-two{style: 'margin-left: 0;'}
+            %h3 SpeedyPrep
+            %p.timeframe
+              %a{href: 'https://speedyprep.com/'} speedyprep.com
+            %p.description
+              Developed a subscription based payment system with
+              %a{href: 'http://stripe.com'} Stripe
+              for SpeedyPrep, an online CLEP preparation applications built with Rails/Backbone.js.
+
+
+          .unit.one-of-two
+            %h3 Flashstackapp
+            %p.timeframe
+              %a{href: 'http://flashstackapp.com'} flashstackapp.com
+            %p.description Flashstackapp, an online flashcard application, was developed as a personal side-project to learn Backbone.js and Rails deployment to a VPS.
+          %h2 Experience
+          %p.description Ruby, Rails, Javascript/Coffeescript, HTML5/Haml, CSS/Sass, Backbone.js, SQL, Postgres, Git, Amazon Web Services, Test-Driven Development, SOA, SSO, External API integration
