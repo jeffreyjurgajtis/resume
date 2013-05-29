@@ -39,6 +39,15 @@ namespace :build do
   end
 
   task :styles do
+    Pathname.glob(SOURCE_DIRECTORY + 'styles' + '**' + '*.scss').each do |source|
+      destination_tmp = DESTINATION_DIRECTORY + source.relative_path_from(SOURCE_DIRECTORY)
+      destination = Pathname(destination_tmp.to_path.sub(/#{destination_tmp.extname}\z/, '.css'))
+      destination.dirname.mkpath
+      destination.open('w:UTF-8') do |f|
+        f.binmode
+        f.write Sass::Engine.for_file(source.to_path, {}).render
+      end
+    end
   end
 
   task :static do
