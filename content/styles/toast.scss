@@ -47,6 +47,9 @@
 	/* Clearfix */
 	overflow: hidden;
 	*overflow: visible;
+  &.first {
+    margin-left: 0;
+  }
 }
 
 .span-grid {
@@ -105,7 +108,10 @@ h2, .beta {
 	font-size: 1.5rem;
 	font-weight: bold;
 	line-height: 30px;
-  color: #2D9C68;
+  color: #812F2F;
+  &.name {
+    color: #000;
+  }
 }
 
 h3, .gamma {

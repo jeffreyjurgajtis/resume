@@ -1,6 +1,6 @@
 .contact {
   position: fixed;
-  padding-top: 110px;
+  padding-top: 105px;
   padding-bottom: 20px;
   margin-bottom: 20px;
   text-align: center;
@@ -12,10 +12,12 @@
   color: #999;
   text-decoration: none;
   word-wrap: break-word;
+  display: block;
+  margin-bottom: 8px;
 }
 
 .contact a:hover {
-  color: #2D9C68;
+  color: #812F2F;
 }
 
 .content {
@@ -24,10 +26,6 @@
   padding-top: 100px;
   padding-bottom: 100px;
   float: right;
-}
-
-.content h2 {
-  /* border-bottom: 1px solid #DDD; */
 }
 
 .content p.timeframe {
@@ -41,7 +39,7 @@
 }
 
 .content a:hover {
-  color: #2D9C68;
+  color: #812F2F;
 }
 
 .content p.description {
