@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:900,400);
+
 .contact {
   position: fixed;
   padding-top: 105px;
@@ -7,9 +9,8 @@
 }
 
 .contact a {
-  font-size: 16px;
-  font-weight: bold;
-  color: #999;
+  font-size: 15px;
+  color: #57AD68;
   text-decoration: none;
   word-wrap: break-word;
   display: block;
@@ -17,12 +18,10 @@
 }
 
 .contact a:hover {
-  color: #812F2F;
+  text-decoration: underline;
 }
 
 .content {
-  border-left: 1px solid #DDD;
-  padding-left: 50px;
   padding-top: 100px;
   padding-bottom: 100px;
   float: right;
@@ -30,16 +29,16 @@
 
 .content p.timeframe {
   font-size: 15px;
-  font-weight: bold;
-  color: #999;
+  color: #B3B3B1;
 }
 
 .content a {
-  color: #999;
+  color: #57AD68;
+  text-decoration: none;
 }
 
 .content a:hover {
-  color: #812F2F;
+  text-decoration: underline;
 }
 
 .content p.description {
@@ -52,8 +51,8 @@
   background-size: contain;
   border: 3px solid #000;
   border-radius: 2px;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 30px;
   margin-right: auto;
   margin-left: auto;
