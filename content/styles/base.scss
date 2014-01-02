@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather:900,400);
+@import url(http://fonts.googleapis.com/css?family=Lato:900);
 
 .contact {
   position: fixed;
@@ -49,10 +49,9 @@
   background-color: #e3e3e3;
   background-image: url('../images/jeff.jpeg');
   background-size: contain;
-  border: 1px solid #000;
   border-radius: 2px;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   margin-bottom: 30px;
   margin-right: auto;
   margin-left: auto;
@@ -65,7 +64,7 @@
     text-align: center;
     padding-top: 30px;
   }
-  
+
   .content {
     float: none;
     padding: 0;
