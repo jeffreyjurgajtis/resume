@@ -7,8 +7,8 @@
 p, ul, ol, hr, table, form, pre, h1, h2, {
 	margin-bottom: 30px;
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  color: #333332;
+  font-weight: 100;
+  color: #FFF;
 }
 
 h1 {
@@ -60,79 +60,17 @@ html {
   margin-left: auto;
 }
 
-// .contact {
-//   position: fixed;
-//   padding-top: 105px;
-//   padding-bottom: 20px;
-//   margin-bottom: 20px;
-//   text-align: center;
-// }
+.photo {
+  background-image: url('../images/mist.png');
+  background-size: contain;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
-// .contact a {
-//   font-size: 15px;
-//   color: #57AD68;
-//   text-decoration: none;
-//   word-wrap: break-word;
-//   display: block;
-//   margin-bottom: 8px;
-// }
-
-// .contact a:hover {
-//   text-decoration: underline;
-// }
-
-// .content {
-//   padding-top: 100px;
-//   padding-bottom: 100px;
-//   float: right;
-// }
-
-// .content p.timeframe {
-//   font-size: 15px;
-//   color: #B3B3B1;
-// }
-
-// .content a {
-//   color: #57AD68;
-//   text-decoration: none;
-// }
-
-// .content a:hover {
-//   text-decoration: underline;
-// }
-
-// .content p.description {
-//   font-size: 17px;
-// }
-
-// .photo {
-//   background-color: #e3e3e3;
-//   background-image: url('../images/jeff.jpeg');
-//   background-size: contain;
-//   border-radius: 2px;
-//   width: 150px;
-//   height: 150px;
-//   margin-bottom: 30px;
-//   margin-right: auto;
-//   margin-left: auto;
-// }
 
 // @media only screen and (max-width: 767px) {
-//   .contact {
-//     height: auto;
-//     position: relative;
-//     text-align: center;
-//     padding-top: 30px;
-//   }
-
-//   .content {
-//     float: none;
-//     padding: 0;
-//     border: none;
-//   }
-
-//   .photo {
-//     width: 100px;
-//     height: 100px;
-//   }
 // }
+
