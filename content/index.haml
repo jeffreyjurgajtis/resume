@@ -1,17 +1,33 @@
 !!!
-%html{lang: 'en'}
+%html{ lang: 'en' }
   %head
-    %meta{charset: 'utf-8'}/
+    %meta{ charset: 'utf-8' }/
     %title Jeffrey Jurgajtis
-    %link{href: 'styles/toast.css', rel: 'stylesheet', type: 'text/css'}/
-    %link{href: 'styles/base.css', rel: 'stylesheet', type: 'text/css'}/
+    %link{ href: 'styles/toast.css', rel: 'stylesheet', type: 'text/css' }/
+    %link{ href: 'styles/base.css', rel: 'stylesheet', type: 'text/css' }/
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }
   %body
     .container
-      .span-grid
-        %h1.center Jeffrey Jurgajtis
-        %p.intro.center I'm a software developer. I enjoy solving business problems with software and learning about new web technologies. I've worked at some exciting places including Role Model Software, McKesson Specialty Health, and Collegeplus.
-        .photo
+      #about
+        .content-wrap
+          %h1.center Jeffrey Jurgajtis
+          .grid
+            .unit.one-of-four
+              .photo
+            .unit.three-of-four
+              %p I'm a software developer. I enjoy solving business problems with software and learning about new web technologies. I've worked at some exciting places including Role Model Software, McKesson Specialty Health, and Collegeplus.
+            .unit.span-grid.contact
+              %a{ href: 'mailto:jeffreyjurgajtis@gmail.com'} jeffreyjurgajtis@gmail.com
+              %a{ href: 'https://github.com/jeffreyjurgajtis'} github.com/jeffreyjurgajtis
+              %a{ href: 'http://www.linkedin.com/pub/jeffrey-jurgajtis/58/695/aa7'} linkedin.com/jeffreyjurgajtis
+              %a{ href: 'https://twitter.com/jeffjurgajtis'} @jeffjurgajtis
+      #work
+        .content-wrap
+        -# %a{ href: 'https://github.com/jeffreyjurgajtis'} github.com/jeffreyjurgajtis
+        -# %a{ href: 'http://www.linkedin.com/pub/jeffrey-jurgajtis/58/695/aa7'} linkedin.com/jeffreyjurgajtis
+        -# %a{ href: 'https://twitter.com/jeffjurgajtis'} @jeffjurgajtis
+        -# %p.intro.center I'm a software developer. I enjoy solving business problems with software and learning about new web technologies. I've worked at some exciting places including Role Model Software, McKesson Specialty Health, and Collegeplus.
+        -# .photo
 
         -# .unit.one-of-four.contact
         -#   .photo

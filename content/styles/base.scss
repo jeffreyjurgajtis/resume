@@ -2,7 +2,7 @@
 	$TYPE
 \*-----------------------------------*/
 
-@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+@import url(http://fonts.googleapis.com/css?family=Lato:100);
 
 p, ul, ol, hr, table, form, pre, h1, h2, {
 	margin-bottom: 30px;
@@ -49,15 +49,20 @@ html {
 	}
 }
 
-.center {
-  text-align: center;
+.content-wrap {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.intro {
+#about {
+  background-image: url('../images/sf3.jpg');
+  background-size: cover;
+  height: 550px;
+  padding-top: 90px;
+}
+
+.center {
   text-align: center;
-  max-width: 500px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .photo {
@@ -65,11 +70,21 @@ html {
   background-size: contain;
   width: 130px;
   height: 130px;
-  margin-bottom: 30px;
   margin-right: auto;
   margin-left: auto;
 }
 
+.contact {
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 100;
+    margin-right: 20px;
+  }
+}
 
 // @media only screen and (max-width: 767px) {
 // }
