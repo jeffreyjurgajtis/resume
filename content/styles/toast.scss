@@ -20,6 +20,24 @@
 	max-width: 100%;
 	margin: 0 auto;
 	padding: 0;
+
+  &.about {
+    background-image: url('../images/sf3.jpg');
+    background-size: cover;
+    height: 540px;
+    padding-top: 85px;
+    padding-bottom: 20px;
+  }
+
+  &.projects {
+    padding-top: 85px;
+    height: 700px;
+  }
+}
+
+.block {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .grid {
@@ -64,6 +82,8 @@
 		width: auto;
 		margin-left: 0;
 		display: block;
+    padding-right: 30px;
+    padding-left: 30px;
 	}
 }
 
@@ -71,7 +91,7 @@
 	$TYPE
 \*-----------------------------------*/
 
-@import url(http://fonts.googleapis.com/css?family=Lato:100);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
 
 p, ul, ol, hr, table, form, pre, h1, h2, {
 	margin-bottom: 30px;
@@ -85,25 +105,39 @@ h1 {
   font-weight: 100;
 	line-height: 1;
   text-transform: uppercase;
+  text-align: center;
 }
 
 h2 {
-	font-size: 30px;
-	font-weight: bold;
+	font-size: 50px;
+	font-weight: 100;
 	line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
 }
 
 h3 {
-	font-size: 20px;
-	font-weight: 700;
+	font-size: 30px;
+	font-weight: 100;
+  color: #000;
+  text-transform: uppercase;
 }
 
 a {
   text-decoration: none;
+  font-weight: 400;
   color: #F3F3F3;
 
   &:hover {
     color: #FFF;
+  }
+}
+
+p {
+  &.desc {
+    font-weight: 100;
+    color: #000;
   }
 }
 
@@ -127,22 +161,6 @@ html {
 	$SPECIFIC
 \*-----------------------------------*/
 
-.content-wrap {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-#about {
-  background-image: url('../images/sf3.jpg');
-  background-size: cover;
-  height: 540px;
-  padding-top: 85px;
-}
-
-.center {
-  text-align: center;
-}
-
 .photo {
   background-image: url('../images/mist.png');
   background-size: contain;
@@ -164,14 +182,34 @@ html {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------------*\
+	$RESPONSIVE
+\*-----------------------------------*/
+
 @media only screen and (max-width: 767px) {
+  .container {
+    &.about {
+      height: auto;
+      padding-top: 30px;
+    }
+  }
+
   h1 {
     font-size: 50px;
     margin-bottom: 15px;
-  }
-
-  #about {
-    height: auto;
-    padding-top: 30px;
   }
 }
