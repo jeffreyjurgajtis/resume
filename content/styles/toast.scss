@@ -36,7 +36,7 @@
 }
 
 .block {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .span-grid { width: 97%; }
-.one-of-two { width: 47%; }
+.one-of-two { width: 47% }
 .one-of-three { width: 30.36%; }
 .two-of-three { width: 63.666666666%; }
 .one-of-four { width: 22.05%; }
@@ -91,60 +91,55 @@
 	$TYPE
 \*-----------------------------------*/
 
-@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:400);
 
-p, ul, ol, hr, table, form, pre, h1, h2, {
+p, ul, ol, hr, table, form, pre, h1, h2, h3 {
 	margin-bottom: 30px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  color: #FFF;
+  font-family: 'Vollkorn', serif;
+  font-weight: 400;
+  color: #000;
 }
 
 h1 {
-	font-size: 70px;
-  font-weight: 100;
+	font-size: 55px;
 	line-height: 1;
   text-transform: uppercase;
   text-align: center;
+  color: #FFF;
 }
 
 h2 {
 	font-size: 50px;
-	font-weight: 100;
 	line-height: 30px;
   text-transform: uppercase;
   text-align: center;
-  color: #000;
 }
 
 h3 {
 	font-size: 30px;
-	font-weight: 100;
-  color: #000;
-  text-transform: uppercase;
-}
-
-a {
-  text-decoration: none;
-  font-weight: 400;
-  color: #F3F3F3;
-
-  &:hover {
-    color: #FFF;
-  }
+  margin-bottom: 15px;
 }
 
 p {
-  &.desc {
-    font-weight: 100;
-    color: #000;
+  &.intro {
+    color: #FFF;
+    margin-top: 20px;
   }
+  &.description {
+    color: #666;
+  }
+}
+
+a {
+  color: #F3F3F3;
+  &:hover { color: #FFF; }
 }
 
 hr {
 	border: none;
 	border-bottom: 1px solid rgba(0,0,0,.1);
 	margin-top: -1px;
+  margin-bottom: 40px;
 }
 
 html {
@@ -162,9 +157,9 @@ html {
 \*-----------------------------------*/
 
 .photo {
-  background-image: url('../images/mist.png');
+  background-image: url('../images/jcircle.png');
   background-size: contain;
-  width: 130px;
+  width: 126px;
   height: 130px;
   margin-right: auto;
   margin-left: auto;
@@ -176,24 +171,11 @@ html {
   a {
     text-decoration: none;
     color: #FFF;
-    font-size: 15px;
     font-weight: 100;
+    font-size: 16px;
     margin-right: 20px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*-----------------------------------*\
