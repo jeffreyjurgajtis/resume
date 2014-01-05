@@ -4,6 +4,7 @@
     %meta{ charset: 'utf-8' }/
     %title Jeffrey Jurgajtis
     %link{ href: 'styles/toast.css', rel: 'stylesheet', type: 'text/css' }/
+    %link{ href: 'styles/typicons.min.css', rel: 'stylesheet', type: 'text/css' }/
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }
   %body
     .container.about
@@ -21,10 +22,15 @@
               , and
               %a{ href: 'http://www.collegeplus.org/' } Collegeplus.
           .unit.span-grid.contact
-            %a{ href: 'mailto:jeffreyjurgajtis@gmail.com'} jeffreyjurgajtis@gmail.com
-            %a{ href: 'https://github.com/jeffreyjurgajtis'} github.com/jeffreyjurgajtis
-            %a{ href: 'http://www.linkedin.com/pub/jeffrey-jurgajtis/58/695/aa7'} linkedin.com/jeffreyjurgajtis
-            %a{ href: 'https://twitter.com/jeffjurgajtis'} @jeffjurgajtis
+            %a{ href: 'mailto:jeffreyjurgajtis@gmail.com'}
+              %i.typcn.typcn-mail
+            %a{ href: 'https://github.com/jeffreyjurgajtis'}
+              %i.typcn.typcn-social-github-circular
+            %a{ href: 'http://www.linkedin.com/pub/jeffrey-jurgajtis/58/695/aa7'}
+              %i.typcn.typcn-social-linkedin-circular
+            %a{ href: 'https://twitter.com/jeffjurgajtis'}
+              %i.typcn.typcn-social-twitter-circular
+
     .container.projects
       .block
         %h2 Projects
@@ -35,11 +41,43 @@
             %p.description Software developer on a cancer decision support software system for Congruent Systems, a health-IT startup recently acquired by McKesson.
           .unit.one-of-two
             %h3 SpeedyPrep
-            %p.description Developed a subscription based payment system with for SpeedyPrep, an online CLEP preparation applications built with Rails/Backbone.js.
+            %p.description
+              Developed a subscription based payment system with
+              %a.dark{ href: 'https://stripe.com/' } Stripe
+              for
+              %a.dark{ href: 'http://www.speedyprep.com/' } SpeedyPrep,
+              an online CLEP prep application built with Rails / Backbone.js.
         .grid
           .unit.one-of-two
             %h3 Flashstack
-            %p.description Flashstack, an online flashcard application, was developed as a personal side-project to learn Backbone.js and Rails deployment to a VPS.
+            %p.description
+              %a.dark{ href: 'https://github.com/jeffreyjurgajtis/flashstack' } Flashstack,
+              an online flashcard application, was developed as a personal side-project to learn Backbone.js and Rails deployment to a VPS.
           .unit.one-of-two
             %h3 Navigate
-            %p.description Software developer on a cancer decision support software system for Congruent Systems, a health-IT startup recently acquired by McKesson.
+            %p.description Lead developer on a complex data-driven Rails / Backbone.js application aimed at helping college students decide on a career path.
+
+    .container.resources
+      .block
+        %h2 Resources
+        %hr
+        .grid
+          .unit.one-of-three
+            %ul
+              %li Ruby
+              %li Rails
+              %li Javascript/Coffeescript
+              %li HTML5/Haml
+          .unit.one-of-three
+            %ul
+              %li CSS/Scss
+              %li BackboneJS
+              %li AngularJS
+              %li SQL
+          .unit.one-of-three
+            %ul
+              %li Postgres
+              %li Git
+              %li Amazon Web Services
+              %li Test-Driven Development
+

@@ -22,16 +22,20 @@
 	padding: 0;
 
   &.about {
-    background-image: url('../images/sf3.jpg');
+    background-image: url('../images/sf.jpg');
     background-size: cover;
-    height: 540px;
-    padding-top: 85px;
-    padding-bottom: 20px;
+    padding: 95px 0;
   }
 
   &.projects {
+    height: auto;
     padding-top: 85px;
-    height: 700px;
+    padding-bottom: 60px;
+  }
+
+  &.resources {
+    height: auto;
+    padding-bottom: 40px;
   }
 }
 
@@ -93,6 +97,9 @@
 
 @import url(http://fonts.googleapis.com/css?family=Vollkorn:400);
 
+$yellow: #EBEB63;
+$grey: #666;
+
 p, ul, ol, hr, table, form, pre, h1, h2, h3 {
 	margin-bottom: 30px;
   font-family: 'Vollkorn', serif;
@@ -126,13 +133,21 @@ p {
     margin-top: 20px;
   }
   &.description {
-    color: #666;
+    color: $grey;
   }
 }
 
 a {
-  color: #F3F3F3;
-  &:hover { color: #FFF; }
+  transition: color 0.5s ease;
+  color: #FFF;
+
+  &.dark {
+    color: $grey;
+  }
+
+  &:hover {
+    color: $yellow;
+  }
 }
 
 hr {
@@ -159,8 +174,8 @@ html {
 .photo {
   background-image: url('../images/jcircle.png');
   background-size: contain;
-  width: 126px;
-  height: 130px;
+  width: 136px;
+  height: 140px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -169,14 +184,20 @@ html {
   text-align: center;
 
   a {
+    margin-right: 5px;
     text-decoration: none;
-    color: #FFF;
-    font-weight: 100;
-    font-size: 16px;
-    margin-right: 20px;
+
+    i {
+      transition: color 0.5s ease;
+      color: #FFF;
+      font-size: 40px;
+
+      &:hover {
+        color: $yellow;
+      }
+    }
   }
 }
-
 
 /*-----------------------------------*\
 	$RESPONSIVE
@@ -185,13 +206,16 @@ html {
 @media only screen and (max-width: 767px) {
   .container {
     &.about {
-      height: auto;
-      padding-top: 30px;
+      padding: 30px 0;
     }
   }
 
   h1 {
     font-size: 50px;
     margin-bottom: 15px;
+  }
+
+  h2 {
+    font-size: 40px;
   }
 }
