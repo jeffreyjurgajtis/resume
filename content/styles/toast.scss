@@ -150,6 +150,10 @@ a {
   }
 }
 
+ul {
+  list-style-type: none;
+}
+
 hr {
 	border: none;
 	border-bottom: 1px solid rgba(0,0,0,.1);
@@ -207,6 +211,15 @@ html {
   .container {
     &.about {
       padding: 30px 0;
+    }
+
+    &.resources {
+      .unit, ul, li {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
     }
   }
 
