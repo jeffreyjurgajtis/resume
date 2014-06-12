@@ -6,74 +6,72 @@
     %link{ href: 'styles/toast.css', rel: 'stylesheet', type: 'text/css' }/
     %link{ href: 'styles/typicons.min.css', rel: 'stylesheet', type: 'text/css' }/
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' }
+    %script{ src: 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' }
   %body
-    .container.about
-      .block
-        %h1 Jeffrey Jurgajtis
+    .container#about
+      .block.main
+        %h1
+          Hello! I'm Jeffrey Jurgajtis
+          %span.ampersand &amp;
+          I'm a software developer.
+
         .grid
           .unit.span-grid
             %p.intro
-              I'm a software developer. I enjoy solving business problems with software and learning about new web technologies. I've worked with some exciting teams including
-              %a{ href: 'http://www.vermonster.com/' } Vermonster
-              ,
-              %a{ href: 'http://rolemodelsoftware.com/' } RoleModel Software
-              , and
-              %a{ href: 'http://www.collegeplus.org/' } CollegePlus.
+              I enjoy solving business problems with software and learning about new web technologies. I've worked with talented teams including
+              = succeed ',' do
+                %a{ href: 'http://www.vermonster.com/' } Vermonster
+              = succeed ',' do
+                %a{ href: 'http://rolemodelsoftware.com/' } RoleModel Software
+              and
+              %a{ href: 'http://www.collegeplus.org/' } CollegePlus
+              to develop web applications using Ruby, Rails, and Javascript.
+
           .unit.span-grid.contact
             %a{ href: 'mailto:jeffreyjurgajtis@gmail.com'}
               %i.typcn.typcn-mail
             %a{ href: 'https://github.com/jeffreyjurgajtis'}
-              %i.typcn.typcn-social-github-circular
+              %i.typcn.typcn-social-github
             %a{ href: 'http://www.linkedin.com/pub/jeffrey-jurgajtis/58/695/aa7'}
-              %i.typcn.typcn-social-linkedin-circular
+              %i.typcn.typcn-social-linkedin
             %a{ href: 'https://twitter.com/jeffjurgajtis'}
-              %i.typcn.typcn-social-twitter-circular
+              %i.typcn.typcn-social-twitter
 
-    .container.projects
+      .page-scroll
+        %p recent projects
+        %a{ href: '#projects' }
+          %i.typcn.typcn-arrow-sorted-down
+
+    .container#projects
       .block
-        %h2 Projects
-        %hr
         .grid
-          .unit.one-of-two
-            %h3 Clear Value Plus
-            %p.description Software developer on a cancer decision support software system for Congruent Systems, a health-IT startup recently acquired by McKesson.
-          .unit.one-of-two
-            %h3 SpeedyPrep
+          .unit.span-grid
+            %h2 Navigate
+            %p.description Lead developer on a data-driven Rails / Backbone.js application aimed at helping college students decide on a career path.
+            .screenshot.navigate
+
+          .unit.span-grid
+            %h2 Clear Value Plus
+            %p.description Software developer on a cancer decision support system for Congruent Systems, a health-IT startup recently acquired by McKesson.
+            .screenshot.clearvalueplus
+
+          .unit.span-grid
+            %h2 SpeedyPrep
             %p.description
               Developed a subscription-based payment system with Stripe for
               %a.dark{ href: 'http://www.speedyprep.com/' } SpeedyPrep,
-              an online CLEP prep application built with Rails / Backbone.js.
-        .grid
-          .unit.one-of-two
-            %h3 Flashstack
-            %p.description
-              %a.dark{ href: 'https://github.com/jeffreyjurgajtis/flashstack' } Flashstack,
-              a web flashcard application, was developed as a personal side-project to learn Backbone.js and Rails deployment to a VPS.
-          .unit.one-of-two
-            %h3 Navigate
-            %p.description Lead developer on a complex data-driven Rails / Backbone.js application aimed at helping college students decide on a career path.
+              an online exam prep application built with Rails / Backbone.js.
+            .screenshot.speedyprep
 
-    .container.resources
-      .block
-        %h2 Resources
-        %hr
-        .grid
-          .unit.one-of-three
-            %ul
-              %li Ruby
-              %li Rails
-              %li Javascript/Coffeescript
-              %li HTML5/Haml
-          .unit.one-of-three
-            %ul
-              %li CSS/Scss
-              %li BackboneJS
-              %li AngularJS
-              %li SQL
-          .unit.one-of-three
-            %ul
-              %li Postgres
-              %li Git
-              %li Amazon Web Services
-              %li Test-Driven Development
+      .page-scroll
+        %a{ href: '#about' }
+          %i.typcn.typcn-arrow-sorted-up
+
+  :javascript
+    $('.page-scroll a').click(function(){
+      $('html, body').animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top
+      }, 500);
+      return false;
+    });
 
