@@ -143,7 +143,6 @@ p {
 }
 
 a {
-  text-decoration: none;
   transition: color 0.2s ease;
   color: $grey;
 
@@ -193,6 +192,7 @@ span.ampersand {
   text-align: center;
 
   a {
+    text-decoration: none;
     font-size: 17px;
     font-weight: 300;
   }
