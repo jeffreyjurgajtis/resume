@@ -37,44 +37,4 @@
               %i.typcn.typcn-social-linkedin
             %a{ href: 'https://twitter.com/jeffjurgajtis'}
               %i.typcn.typcn-social-twitter
-            %a{ href: 'docs/jeffrey-jurgajtis.pdf', download: 'jeffrey-jurgajtis.pdf'}
-              %i.typcn.typcn-download
-
-      .page-scroll
-        %p recent projects
-        %a{ href: '#projects' }
-          %i.typcn.typcn-arrow-sorted-down
-
-    .container#projects
-      .block
-        .grid
-          .unit.span-grid
-            %h2 Navigate
-            %p.description Lead developer on a data-driven Rails / Backbone.js application aimed at helping college students decide on a career path.
-            .screenshot.navigate
-
-          .unit.span-grid
-            %h2 Clear Value Plus
-            %p.description Software developer on a cancer decision support system for Congruent Systems, a health-IT startup recently acquired by McKesson.
-            .screenshot.clearvalueplus
-
-          .unit.span-grid
-            %h2 SpeedyPrep
-            %p.description
-              Developed a subscription-based payment system with Stripe for
-              %a.dark{ href: 'http://www.speedyprep.com/' } SpeedyPrep,
-              an online exam prep application built with Rails / Backbone.js.
-            .screenshot.speedyprep
-
-      .page-scroll
-        %a{ href: '#about' }
-          %i.typcn.typcn-arrow-sorted-up
-
-  :javascript
-    $('.page-scroll a').click(function(){
-      $('html, body').animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-      }, 500);
-      return false;
-    });
 
